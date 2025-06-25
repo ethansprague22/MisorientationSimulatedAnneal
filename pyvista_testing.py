@@ -21,4 +21,7 @@ from scipy.spatial.transform import Rotation as R
 
 micro = pv.read('micro.vtk')
 print(micro.cell_data.keys())
-# micro.plot(show_edges=True)
+# micro.plot()
+
+threshed = micro.threshold(value=(10,15))
+threshed.plot()
