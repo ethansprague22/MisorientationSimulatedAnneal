@@ -17,9 +17,13 @@ grid.origin = (0,0,0)
 grid.spacing = (1,1,1)
 
 grid.cell_data['values'] = values.flatten(order='F')
+# grid.cell_data['values'] = np.arange(0,N**3) # without reshaping and flattening
 
-nbrs_values = [138, 136, 201, 73, 145, 129]
+# If i dont reshape it, then the ordering is different but it still looks like the neighbouring is preserved...
+
+nbrs_values = [381, 253, 318, 316, 261, 309, 199,  71, 128, 134, 143, 191]
 nbrs_ids = np.where(np.isin(grid.cell_data['values'],nbrs_values))[0]
+
 
 # grid.plot(show_edges=True)
 
